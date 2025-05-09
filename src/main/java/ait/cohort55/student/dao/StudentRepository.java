@@ -14,7 +14,7 @@ public interface StudentRepository extends CrudRepository<Student, Long> {
 
     long countByNameIn(Set<String> names);
 
-    @Query("{'score.?0': { $gt: ?1 } }")
+    @Query("{'scores.?0': { $gt: ?1 } }")
     List<Student> findByExamScoreGreaterThan(String exam, Integer minScore);
 
 
